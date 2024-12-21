@@ -60,13 +60,16 @@ def task2():
         x = float(input())
         y = float(input())
         r = float(input())
-
-        if (x < 0 and y < 0 and pow((x+r), 2) + pow((y+r), 2) < pow(r, 2) and y < -x-2*r and x < -r):
-            return("In")
-        elif (x > 0 and 0 < y < -y + 2 * r and x > r and x < 2*r and pow((x - r), 2) + pow((y - r), 2) > pow(r, 2) and x < -y+2*r):
-            return("In")
+        if (r < 0):
+            print("R не повинен бути менше за нуль")
+            return 0
         else:
-            return("Out")
+            if (x < 0 and y < 0 and pow((x+r), 2) + pow((y+r), 2) < pow(r, 2) and y < -x-2*r and x < -r):
+                return("In")
+            elif (x > 0 and 0 < y < -y + 2 * r and x > r and x < 2*r and pow((x - r), 2) + pow((y - r), 2) > pow(r, 2) and x < -y+2*r):
+                return("In")
+            else:
+                return("Out")
     except:
         print("Помилка")
         return 0
